@@ -1,20 +1,20 @@
 %% Nonlinear Shooting With Newton's Method
 
 %% Input Information
-a = 1;          % left endpoint
-b = 2;          % right endpoint
-alpha = 0;      % boundary condition at left endpoint
-beta = log(2);  % boundary condition at right endpoint
+a = 0;          % left endpoint
+b = pi/2;       % right endpoint
+alpha = 1;      % boundary condition at left endpoint
+beta = exp(1);  % boundary condition at right endpoint
 N = 10;         % number of subintervals
 tol = 1e-4;     % tolerance
 M = 10;         % maximum number of iterations
 
-f = @(x,y,y_prime) -exp(-2*y);
-partialf_partialy = @(x,y,y_prime) 2*exp(-2*y);
-partialf_partialy_prime = @(x,y,y_prime) 0;
+f = @(x,y,y_prime) y_prime*cos(x) - y*log(y);
+partialf_partialy = @(x,y,y_prime) -log(y) - 1;
+partialf_partialy_prime = @(x,y,y_prime) cos(x);
 
 % Exact solution
-y = @(x) log(x);
+y = @(x) exp(sin(x));
 
 %% Performing the method
 
@@ -22,7 +22,7 @@ h = (b-a)/N;
 j = 1;
 TK = (beta - alpha)/(b-a);
 
-fprintf('x_i \t w_1i \t\t y(x_i) \t |w_1i-y(x_i)| \t w_2i\n')
+fprintf('x_i \t\t w_1i \t\t y(x_i) \t |w_1i-y(x_i)| \t w_2i\n')
 
 while(j <= M)
     w(1,1) = alpha;
@@ -71,7 +71,7 @@ while(j <= M)
     if(abs(w(1,N+1) - beta) <= tol)
         for i = 1:N+1
             x = a + (i-1) * h;
-            fprintf('%.1f \t %.8f \t %.8f \t %.8f \t %.8f \n',x,w(1,i),y(x),abs(w(1,i)-y(x)),w(2,i))
+            fprintf('%.8f \t %.8f \t %.8f \t %.8f \t %.8f \n',x,w(1,i),y(x),abs(w(1,i)-y(x)),w(2,i))
         end
 
         fprintf('Convergence in %d iterations t = %.7f\n',j,TK)
