@@ -3,9 +3,9 @@ Codes for the Python and MATLAB implementation of numerical methods from Math 15
 
 |Assignment | Score |
 | --- | --- |
-| Homework 1 | 24/24 |
-| Homework 2 | 23.9/24 |
-| Homework 3 | 24/24 |
+| Homework 1 | 100% |
+| Homework 2 | 99.6%|
+| Homework 3 | 100% |
 | Homework 4 | TBD |
-| Midterm | 36/36 |
+| Midterm | 100% |
 | Final | TBD |
