@@ -6,6 +6,6 @@ Codes for the Python and MATLAB implementation of numerical methods from Math 15
 | Homework 1 | 100% |
 | Homework 2 | 99.6%|
 | Homework 3 | 100% |
-| Homework 4 | TBD |
+| Homework 4 | 100% |
 | Midterm | 100% |
 | Final | TBD |
