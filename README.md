@@ -8,4 +8,4 @@ Codes for the Python and MATLAB implementation of numerical methods from Math 15
 | Homework 3 | 100% |
 | Homework 4 | 100% |
 | Midterm | 100% |
-| Final | TBD |
+| Final | 96.6% |
